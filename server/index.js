@@ -10,12 +10,11 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
-app.use('/posts', require('./routes/posts.js'))
-
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors())
 
+app.use('/posts', require('./routes/posts.js'))
 const CONNECTION_URL = 'mongodb+srv://markus:120382m@cluster0.moij7.mongodb.net/memories?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000
 
