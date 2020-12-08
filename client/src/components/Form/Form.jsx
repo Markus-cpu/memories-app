@@ -14,12 +14,16 @@ const Form = () => {
 
     }
 
+    const clear = () => {
+
+    }
+
     return (
         <Paper className={classes.paper}>
             <form
                 autoComplete='off'
                 noValidate
-                className={classes.form}
+                className={`${classes.root} ${classes.form}`}
                 onSubmit={handleSubmit}
             >
                 <Typography variant='h6'>
@@ -38,7 +42,7 @@ const Form = () => {
                     variant='outlined'
                     label='title'
                     fullWidth
-                    value={postData.creator}
+                    value={postData.title}
                     onChange={(e) => setPostData({ ...postData, title: e.target.value })}
                 />
                 <TextField
@@ -46,7 +50,7 @@ const Form = () => {
                     variant='outlined'
                     label='message'
                     fullWidth
-                    value={postData.creator}
+                    value={postData.message}
                     onChange={(e) => setPostData({ ...postData, message: e.target.value })}
                 />
                 <TextField
@@ -54,7 +58,7 @@ const Form = () => {
                     variant='outlined'
                     label='tags'
                     fullWidth
-                    value={postData.creator}
+                    value={postData.tags}
                     onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
                 />
                 <div className={classes.fileInput}>
@@ -66,13 +70,22 @@ const Form = () => {
                 </div>
                 <Button
                     className={classes.buttonSubmit}
-                    variant='container'
+                    variant='contained'
                     color='primary'
                     size='large'
                     type='submit'
                     fullWidth
                 >
                     Submit
+                </Button>
+                <Button
+                    variant='contained'
+                    color='secondary'
+                    size='small'
+                    onClick={clear}
+                    fullWidth
+                >
+                    Clear
                 </Button>
             </form>
         </Paper>

@@ -1,4 +1,4 @@
-const reducer = (posts: Array<any>, action: any) => {
+const reducer = (posts: Array<string | number>, action: any) => {
     if(action.type === 'CREATE') {
         switch (action.type) {
             case 'FETCH_ALL':

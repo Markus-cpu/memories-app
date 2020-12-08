@@ -1,12 +1,11 @@
 import React from 'react'
-import {DefaultRootState, useSelector} from 'react-redux'
-
+import {useSelector} from 'react-redux'
 import Post from "./Post/Post";
 import useStyles from './style'
 
-const Posts: React.FC = () => {
+const Posts = () => {
     const classes = useStyles()
-    const posts = useSelector((state: DefaultRootState) = > state.posts)
+    const posts = useSelector((state) = > state.posts)
     return (
         <div>
             <h1>Posts</h1>
