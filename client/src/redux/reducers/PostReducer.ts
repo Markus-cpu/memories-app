@@ -3,7 +3,7 @@ import {
     CREATE_POST,
     FETCH_ALL,
     GetPostsStateType,
-    PostActionTypes 
+    ActionTypes 
 } 
 from './../types/PostTypes';
 
@@ -13,15 +13,18 @@ const initialStateFetchPosts: GetPostsStateType = {
 
 export const fetchPostsReducer = (
     state = initialStateFetchPosts,
-    action: PostActionTypes 
+    action: ActionTypes 
 ): GetPostsStateType => {
     switch (action.type) {
         case FETCH_ALL:
             return {
-                ...state,
                 posts: action.payload
+            }
+        case CREATE_POST:
+            return {
+               posts: [...state, action.payload]
             }
         default:
             return state    
-    }
+    } 
 }

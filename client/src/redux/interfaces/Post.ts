@@ -1,4 +1,4 @@
-export interface Post {
+export type Post = {
     title: string
     message: string
     creator: string
