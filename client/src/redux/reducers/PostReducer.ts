@@ -1,7 +1,7 @@
-
+import { Post } from '../interfaces/Post'
 import { 
     CREATE_POST,
-    FETCH_ALL,
+    FETCH_ALL_POSTS,
     GetPostsStateType,
     ActionTypes 
 } 
@@ -16,13 +16,14 @@ export const fetchPostsReducer = (
     action: ActionTypes 
 ): GetPostsStateType => {
     switch (action.type) {
-        case FETCH_ALL:
+        case FETCH_ALL_POSTS:
             return {
                 posts: action.payload
             }
         case CREATE_POST:
             return {
-               posts: [...state, action.payload]
+                ...state,
+                posts: [...state.posts, action.payload] as Post[] // Для восприятия данного массива как тип Post[]
             }
         default:
             return state    

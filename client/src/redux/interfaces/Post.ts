@@ -2,7 +2,7 @@ export type Post = {
     title: string
     message: string
     creator: string
-    tags: string[]
+    tags: string
     selectedFile: string
     likeCount: {
         type: number

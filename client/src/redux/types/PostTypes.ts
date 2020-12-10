@@ -1,6 +1,6 @@
 import { Post } from '../interfaces/Post'
 
-export const FETCH_ALL = 'FETCH_ALL'
+export const FETCH_ALL_POSTS = 'FETCH_ALL_POSTS'
 export const CREATE_POST = 'CREATE_POST'
 
 export type GetPostsStateType = {
@@ -9,7 +9,7 @@ export type GetPostsStateType = {
 
 
 export type FetchPostsActionType = {
-    type: typeof FETCH_ALL
+    type: typeof FETCH_ALL_POSTS
     payload: Post[]
 }
 
