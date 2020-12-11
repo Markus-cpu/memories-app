@@ -1,10 +1,10 @@
 import { Post } from './../interfaces/Post';
-import { FETCH_ALL, CREATE_POST, CreatePostActionType, FetchPostsActionType } from './../types/PostTypes'
+import { FETCH_ALL_POSTS, CREATE_POST, CreatePostActionType, FetchPostsActionType } from './../types/PostTypes'
 
 
 export const fetchPostsAction = (posts: Post[]): FetchPostsActionType => {
     return {
-        type: FETCH_ALL,
+        type: FETCH_ALL_POSTS,
         payload: posts
     }
 }

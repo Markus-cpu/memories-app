@@ -11,7 +11,7 @@ const initialStateFetchPosts: GetPostsStateType = {
     posts: []
 }
 
-export const fetchPostsReducer = (
+export const PostReducer = (
     state = initialStateFetchPosts,
     action: ActionTypes 
 ): GetPostsStateType => {
@@ -23,7 +23,7 @@ export const fetchPostsReducer = (
         case CREATE_POST:
             return {
                 ...state,
-                posts: [...state.posts, action.payload] as Post[] // Для восприятия данного массива как тип Post[]
+                posts: [...state.posts, action.payload] as Post[] // Для восприятия данного массива как тип Array<Post[]>
             }
         default:
             return state    

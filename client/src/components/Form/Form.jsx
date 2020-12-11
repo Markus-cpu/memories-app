@@ -3,7 +3,7 @@ import useStyles from './style'
 import { Typography, TextField, Button, Paper } from '@material-ui/core'
 import FileBase from 'react-file-base64'
 import { useDispatch } from 'react-redux'
-import { createPost } from '../../actions/posts'
+import { createPost } from '../../redux/effects/Posts'
 
 
 const Form = () => {
@@ -19,6 +19,7 @@ const Form = () => {
         e.preventDefault()
 
         dispatch(createPost(postData))
+        setPostData('')
     }
 
     const clear = () => {
